@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Travel Diary Capstone</title>
+    <link rel="stylesheet" type="text/css" href="normalize.css" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300&family=Pacifico&family=Roboto&family=Sriracha&display=swap"
+        rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+    <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+
+<body>
+    <header className='clearfix'>
+        <h4>Travel Bucket</h4>
+            <nav className="nav">
+                <ul className='link'>
+                    <!-- navigation for visitors -->
+                    <li>
+                        <a className="nav-link-item" href="/log-in">
+                            <i className="fas fa-edit"></i>
+                            <span className='navlink-text'>Log-in</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a className="nav-link-item" href="/register" >
+                            <i className="fas fa-sign-out-alt"></i>
+                            <span className='navlink-text'>Register</span>
+                        </a>
+                    </li>
+                    <!-- navigation for logged in users -->
+                    <li>
+                        <a className="nav-link-item" href="/dashboard">
+                            <i className="fas fa-question-circle"></i>
+                            <span className='navlink-text'>Dashboard</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a className="nav-link-item" href="/new-item">
+                            <i className="fas fa-plus-circle"></i>
+                            <span className='navlink-text'>New Item</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a className="nav-link-item" href="/" onClick={this.logOutClick}>
+                            <i className="fas fa-sign-out-alt"></i>
+                            <span className='navlink-text'>Log-Out</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+    </header>
+
+    <main className="container">
+
+        <section className="registration">
+
+            <div className="alert alert-success">
+                <i className="fas fa-check"></i> <strong>Success</strong> Account Activated Sucessfully!!
+            </div>
+
+            <div className="alert alert-warning">
+                <i className="fas fa-exclamation"></i> <strong>Warning</strong> Password does not meet complexity
+                requirements!!
+            </div>
+
+            <div className="alert alert-failure">
+                <i className="fas fa-times"></i> <strong>Failure</strong> Registration Failed!! Please see System
+                Adminstrator!!
+            </div>
+
+            <form className="registration-form">
+                <h1>Travel Bucket Registration</h1>
+                <div className="form-item">
+                    <label htmlFor="register-email">Email</label>
+                    <input type="text" placeholder="email" required="" id="register-email" />
+                </div>
+                <div className="form-item">
+                    <label htmlFor="register-password">Password</label>
+                    <input type="text" placeholder="password" required="" id="register-password" />
+                </div>
+                <div className="form-item">
+                    <label htmlFor="register-confirm-password">Confirm Password</label>
+                    <input type="text" placeholder="confirm-password" required="" id="register-confirm-password" />
+                </div>
+                <div className="form-item">
+                    <a href="#" className="myButton">Register</a>
+                    <p>Already have an account? <a href="#">Sign In</a></p>
+                </div>
+            </form>
+        </section>
+
+
+
+        <section className="sign-in">
+            <div className="alert alert-info">
+                <i className="fas fa-info"></i> <strong>Info</strong> Please enter username and password!
+            </div>
+
+            <div className="alert alert-warning">
+                <i className="fas fa-exclamation"></i> <strong>Warning</strong> Username or password incorrect!!
+            </div>
+
+            <form className="sign-in-form">
+                <h1>Travel Bucket Sign-In</h1>
+
+                <div className="form-item">
+                    <label htmlFor="sign-in-email">Email</label>
+                    <input type="text" placeholder="email" required="" id="sign-in-email" />
+                </div>
+                <div className="form-item">
+                    <label htmlFor="sign-in-password">Password</label>
+                    <input type="text" placeholder="password" required="" id="sign-in-password" />
+                </div>
+                <div className="form-item">
+                    <a href="#" className="myButton">Sign-In</a>
+                    <p>Need to create an account? <a href="#">Register</a></p>
+                </div>
+            </form>
+        </section>
+
+
+
+
+        <section className="landing-page">
+            <h1>Travel Bucket</h1>
+
+            <div className="item-wrapper">
+                <div className="item-column">
+                    <img src="https://m.media-amazon.com/images/I/51+vl7wfRPL._AC_.jpg" className="item-image" alt="image of united states map" />
+                </div>
+                <div className="item-column">
+                    <h3 className="item-title">United States</h3>
+                    <p className="item-notes">Here are the user's notes</p>
+                    <ul className="item-details">
+                        <li className="item-rating">
+                            <i className="fas fa-star selected-icon"></i>
+                            <i className="fas fa-star selected-icon"></i>
+                            <i className="fas fa-star selected-icon"></i>
+                            <i className="fas fa-star"></i>
+                            <i className="fas fa-star"></i>
+                        </li>
+                        <li className="item-cost">
+                            <i className="fas fa-dollar-sign selected-icon"></i>
+                            <i className="fas fa-dollar-sign selected-icon"></i>
+                            <i className="fas fa-dollar-sign"></i>
+                        </li>
+                        <li className="item-currency">America (United States) Dollars - USD</li>
+                        <li className="item-type">
+                            <i className="fas fa-futbol selected-icon"></i> 
+                            <i className="fas fa-praying-hands"></i> 
+                            <i className="fas fa-graduation-cap"></i> 
+                            <i className="fas fa-landmark"></i> 
+                            <i className="fas fa-heart"></i> 
+                            <i className="fas fa-hiking"></i> 
+                            <i className="fas fa-business-time"></i> 
+                            <i className="fas fa-bus"></i> 
+                        </li>
+                        <li className="item-language">English</li>
+                        <!-- <li className="item-category">Been There Done That!</li> -->
+                        <!-- <li className="is-public">Public</li> -->
+                    </ul>
+                </div>
+
+            </div>
+
+            
+            <div className="item-wrapper">
+                <div className="item-column">
+                    <img src="https://m.media-amazon.com/images/I/51+vl7wfRPL._AC_.jpg" className="item-image" alt="image of united states map" />
+                </div>
+                <div className="item-column">
+                    <h3 className="item-title">United States</h3>
+                    <p className="item-notes">Here are the user's notes</p>
+                    <ul className="item-details">
+                        <li className="item-rating">
+                            <i className="fas fa-star selected-icon"></i>
+                            <i className="fas fa-star selected-icon"></i>
+                            <i className="fas fa-star selected-icon"></i>
+                            <i className="fas fa-star"></i>
+                            <i className="fas fa-star"></i>
+                        </li>
+                        <li className="item-cost">
+                            <i className="fas fa-dollar-sign selected-icon"></i>
+                            <i className="fas fa-dollar-sign selected-icon"></i>
+                            <i className="fas fa-dollar-sign"></i>
+                        </li>
+                        <li className="item-currency">America (United States) Dollars - USD</li>
+                        <li className="item-type">
+                            <i className="fas fa-futbol selected-icon"></i> 
+                            <i className="fas fa-praying-hands"></i> 
+                            <i className="fas fa-graduation-cap"></i> 
+                            <i className="fas fa-landmark"></i> 
+                            <i className="fas fa-heart"></i> 
+                            <i className="fas fa-hiking"></i> 
+                            <i className="fas fa-business-time"></i> 
+                            <i className="fas fa-bus"></i> 
+                        </li>
+                        <li className="item-language">English</li>
+                        <!-- <li className="item-category">Been There Done That!</li> -->
+                        <!-- <li className="is-public">Public</li> -->
+                    </ul>
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+
+
+
+        <section className="dashboard-page">
+
+            <h1>Hello Jimmy Smith!</h1>
+            <div className="item-wrapper">
+                <div className="item-column">
+                    <img src="https://m.media-amazon.com/images/I/51+vl7wfRPL._AC_.jpg" className="item-image" alt="image of united states map" />
+                </div>
+                <div className="item-column">
+                    <h3 className="item-title">United States</h3>
+                    <p className="item-notes">Here are the user's notes</p>
+                    <ul className="item-details">
+                        <li className="item-rating">
+                            <i className="fas fa-star selected-icon"></i>
+                            <i className="fas fa-star selected-icon"></i>
+                            <i className="fas fa-star selected-icon"></i>
+                            <i className="fas fa-star"></i>
+                            <i className="fas fa-star"></i>
+                        </li>
+                        <li className="item-cost">
+                            <i className="fas fa-dollar-sign selected-icon"></i>
+                            <i className="fas fa-dollar-sign selected-icon"></i>
+                            <i className="fas fa-dollar-sign"></i>
+                        </li>
+                        <li className="item-currency">America (United States) Dollars - USD</li>
+                        <li className="item-type">
+                            <i className="fas fa-futbol selected-icon"></i> 
+                            <i className="fas fa-praying-hands"></i> 
+                            <i className="fas fa-graduation-cap"></i> 
+                            <i className="fas fa-landmark"></i> 
+                            <i className="fas fa-heart"></i> 
+                            <i className="fas fa-hiking"></i> 
+                            <i className="fas fa-business-time"></i> 
+                            <i className="fas fa-bus"></i> 
+                        </li>
+                        <li className="item-language">English</li>
+                        <li className="item-category">Been There Done That!
+                            <a href="#" className="myButton">On My List!</a>
+                        </li>
+                        <li className="is-public">Public</li>
+                        <li className="item-actions">
+                            <div className="form-item">
+                                <a href="#" className="myButton">Edit</a>
+                            </div>
+                            <div className="form-item">
+                                <a href="#" className="myButton">Delete</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>           
+        </section>
+
+
+
+        <section className="add-item-page">
+            <h1>New Item</h1>
+            <form className="create-new-item">
+                <div className="alert alert-info">
+                    <i className="fas fa-info"></i> <strong>Info</strong> Please enter a valid keyword!!
+                </div>
+                <div className="alert alert-info">
+                    <i className="fas fa-info"></i> <strong>Info</strong> Please select visited/bucket-list!!
+                </div>
+                <div className="add-item">
+                    <label htmlFor="keyword-search">Enter a keyword</label>
+                    <input type="text" placeholder="keyword" required="" id="keyword-search" />
+                </div>
+                <div className="form-item">
+                    <label htmlFor="visted">Have you been here before?</label>
+                    <select name="visited" id="visited" required>
+                        <option defaultValue="" disabled>Select Bucket Status</option>
+                        <option defaultValue="Been There Done That!">Been There Done That!</option>
+                        <option defaultValue="On My List!">On My List!</option>
+                    </select>
+                </div>
+                <div className="form-item">
+                    <label htmlFor="rating">How would you rate this location?:</label>
+                    <select name="rating" id="rating">
+                        <option defaultValue="" disabled>Select Rating</option>
+                        <option defaultValue="1 Star">1 Star</option>
+                        <option defaultValue="2 Stars">2 Stars</option>
+                        <option defaultValue="3 Stars">3 Stars</option>
+                        <option defaultValue="4 Stars">4 Stars</option>
+                        <option defaultValue="5 Stars">5 Stars</option>
+                    </select>
+                </div>
+                <div className="form-item">
+                    <label htmlFor="cost">How would you rate this location's cost?:</label>
+                    <select name="cost" id="cost">
+                        <option defaultValue="" disabled>Select Cost</option>
+                        <option defaultValue="$">$</option>
+                        <option defaultValue="$$">$$</option>
+                        <option defaultValue="$$$">$$$</option>
+                    </select>
+                </div>
+                <div className="form-item">
+                    <label htmlFor="language">What language is primarily spoken here?:</label>
+                    <select name="language" id="language" data-placeholder="Choose a Language...">
+                        <option selected defaultValue="" disabled>Select Language</option>
+                        <option defaultValue="English">English</option>
+                        <option defaultValue="Afrikaans">Afrikaans</option>
+                        <option defaultValue="Albanian">Albanian</option>
+                        <option defaultValue="Arabic">Arabic</option>
+                        <option defaultValue="Armenian">Armenian</option>
+                        <option defaultValue="Basque">Basque</option>
+                        <option defaultValue="Bengali">Bengali</option>
+                        <option defaultValue="Bulgarian">Bulgarian</option>
+                        <option defaultValue="Catalan">Catalan</option>
+                        <option defaultValue="Cambodian">Cambodian</option>
+                        <option defaultValue="Chinese (Mandarin)">Chinese (Mandarin)</option>
+                        <option defaultValue="Croatian">Croatian</option>
+                        <option defaultValue="Czech">Czech</option>
+                        <option defaultValue="Danish">Danish</option>
+                        <option defaultValue="Dutch">Dutch</option>
+                        <option defaultValue="Estonian">Estonian</option>
+                        <option defaultValue="Fiji">Fiji</option>
+                        <option defaultValue="Finnish">Finnish</option>
+                        <option defaultValue="French">French</option>
+                        <option defaultValue="Georgian">Georgian</option>
+                        <option defaultValue="German">German</option>
+                        <option defaultValue="Greek">Greek</option>
+                        <option defaultValue="Gujarati">Gujarati</option>
+                        <option defaultValue="Hebrew">Hebrew</option>
+                        <option defaultValue="Hindi">Hindi</option>
+                        <option defaultValue="Hungarian">Hungarian</option>
+                        <option defaultValue="Icelandic">Icelandic</option>
+                        <option defaultValue="Indonesian">Indonesian</option>
+                        <option defaultValue="Irish">Irish</option>
+                        <option defaultValue="Italian">Italian</option>
+                        <option defaultValue="Japanese">Japanese</option>
+                        <option defaultValue="Javanese">Javanese</option>
+                        <option defaultValue="Korean">Korean</option>
+                        <option defaultValue="Latin">Latin</option>
+                        <option defaultValue="Latvian">Latvian</option>
+                        <option defaultValue="Lithuanian">Lithuanian</option>
+                        <option defaultValue="Macedonian">Macedonian</option>
+                        <option defaultValue="Malay">Malay</option>
+                        <option defaultValue="Malayalam">Malayalam</option>
+                        <option defaultValue="Maltese">Maltese</option>
+                        <option defaultValue="Maori">Maori</option>
+                        <option defaultValue="Marathi">Marathi</option>
+                        <option defaultValue="Mongolian">Mongolian</option>
+                        <option defaultValue="Nepali">Nepali</option>
+                        <option defaultValue="Norwegian">Norwegian</option>
+                        <option defaultValue="Persian">Persian</option>
+                        <option defaultValue="Polish">Polish</option>
+                        <option defaultValue="Portuguese">Portuguese</option>
+                        <option defaultValue="Punjabi">Punjabi</option>
+                        <option defaultValue="Quechua">Quechua</option>
+                        <option defaultValue="Romanian">Romanian</option>
+                        <option defaultValue="Russian">Russian</option>
+                        <option defaultValue="Samoan">Samoan</option>
+                        <option defaultValue="Serbian">Serbian</option>
+                        <option defaultValue="Slovak">Slovak</option>
+                        <option defaultValue="Slovenian">Slovenian</option>
+                        <option defaultValue="Spanish">Spanish</option>
+                        <option defaultValue="Swahili">Swahili</option>
+                        <option defaultValue="Swedish ">Swedish </option>
+                        <option defaultValue="Tamil">Tamil</option>
+                        <option defaultValue="Tatar">Tatar</option>
+                        <option defaultValue="Telugu">Telugu</option>
+                        <option defaultValue="Thai">Thai</option>
+                        <option defaultValue="Tibetan">Tibetan</option>
+                        <option defaultValue="Tonga">Tonga</option>
+                        <option defaultValue="Turkish">Turkish</option>
+                        <option defaultValue="Ukrainian">Ukrainian</option>
+                        <option defaultValue="Urdu">Urdu</option>
+                        <option defaultValue="Uzbek">Uzbek</option>
+                        <option defaultValue="Vietnamese">Vietnamese</option>
+                        <option defaultValue="Welsh">Welsh</option>
+                        <option defaultValue="Xhosa">Xhosa</option>
+                      </select>
+                </div>
+                <div className="form-item">
+                    <label htmlFor="type">What kind of trip would you suggest?:</label>
+                    <select name="type" id="type">
+                        <option defaultValue="" disabled>Select Type</option>
+                        <option defaultValue="Historical">Historical</option>
+                        <option defaultValue="Romantic">Romantic</option>
+                        <option defaultValue="Outdoor">Outdoor</option>
+                        <option defaultValue="Business">Business</option>
+                        <option defaultValue="Tourist">Tourist</option>
+                        <option defaultValue="Religious">Religious</option>
+                        <option defaultValue="Sport">Sport</option>
+                        <option defaultValue="Educational">Educational</option>
+                    </select>
+                </div>
+                <div className="form-item">
+                    <label htmlFor="currencies">What is this region's currency?</label>
+                    <select name="currencies" id="currencies">
+                        <option selected defaultValue="" disabled>Select Currency</option>
+                        <option defaultValue="America (United States) Dollars - USD">America (United States) Dollars – USD</option>
+                        <option defaultValue="Afghanistan Afghanis - AFN">Afghanistan Afghanis – AFN</option>
+                        <option defaultValue="Albania Leke - ALL">Albania Leke – ALL</option>
+                        <option defaultValue="Algeria Dinars - DZD">Algeria Dinars – DZD</option>
+                        <option defaultValue="Argentina Pesos - ARS">Argentina Pesos – ARS</option>
+                        <option defaultValue="Australia Dollars - AUD">Australia Dollars – AUD</option>
+                        <option defaultValue="Austria Schillings - ATS">Austria Schillings – ATS</option>
+                         
+                        <option defaultValue="Bahamas Dollars - BSD">Bahamas Dollars – BSD</option>
+                        <option defaultValue="Bahrain Dinars - BHD">Bahrain Dinars – BHD</option>
+                        <option defaultValue="Bangladesh Taka - BDT">Bangladesh Taka – BDT</option>
+                        <option defaultValue="Barbados Dollars - BBD">Barbados Dollars – BBD</option>
+                        <option defaultValue="Belgium Francs - BEF">Belgium Francs – BEF</option>
+                        <option defaultValue="Bermuda Dollars - BMD">Bermuda Dollars – BMD</option>
+                         
+                        <option defaultValue="Brazil Reais - BRL">Brazil Reais – BRL</option>
+                        <option defaultValue="Bulgaria Leva - BGN">Bulgaria Leva – BGN</option>
+                        <option defaultValue="Canada Dollars - CAD">Canada Dollars – CAD</option>
+                        <option defaultValue="CFA BCEAO Francs - XOF">CFA BCEAO Francs – XOF</option>
+                        <option defaultValue="CFA BEAC Francs - XAF">CFA BEAC Francs – XAF</option>
+                        <option defaultValue="Chile Pesos - CLP">Chile Pesos – CLP</option>
+                         
+                        <option defaultValue="China Yuan Renminbi - CNY">China Yuan Renminbi – CNY</option>
+                        <option defaultValue="RMB (China Yuan Renminbi) - CNY">RMB (China Yuan Renminbi) – CNY</option>
+                        <option defaultValue="Colombia Pesos - COP">Colombia Pesos – COP</option>
+                        <option defaultValue="CFP Francs - XPF">CFP Francs – XPF</option>
+                        <option defaultValue="Costa Rica Colones - CRC">Costa Rica Colones – CRC</option>
+                        <option defaultValue="Croatia Kuna - HRK">Croatia Kuna – HRK</option>
+                         
+                        <option defaultValue="Cyprus Pounds - CYP">Cyprus Pounds – CYP</option>
+                        <option defaultValue="Czech Republic Koruny - CZK">Czech Republic Koruny – CZK</option>
+                        <option defaultValue="Denmark Kroner - DKK">Denmark Kroner – DKK</option>
+                        <option defaultValue="Deutsche (Germany) Marks - DEM">Deutsche (Germany) Marks – DEM</option>
+                        <option defaultValue="Dominican Republic Pesos - DOP">Dominican Republic Pesos – DOP</option>
+                        <option defaultValue="Dutch (Netherlands) Guilders - NLG">Dutch (Netherlands) Guilders – NLG</option>
+                         
+                        <option defaultValue="Eastern Caribbean Dollars - XCD">Eastern Caribbean Dollars – XCD</option>
+                        <option defaultValue="Egypt Pounds - EGP">Egypt Pounds – EGP</option>
+                        <option defaultValue="Estonia Krooni - EEK">Estonia Krooni – EEK</option>
+                        <option defaultValue="Euro - EUR">Euro – EUR</option>
+                        <option defaultValue="Fiji Dollars - FJD">Fiji Dollars – FJD</option>
+                        <option defaultValue="Finland Markkaa - FIM">Finland Markkaa – FIM</option>
+                         
+                        <option defaultValue="France Francs - FRF*">France Francs – FRF*</option>
+                        <option defaultValue="Germany Deutsche Marks - DEM">Germany Deutsche Marks – DEM</option>
+                        <option defaultValue="Gold Ounces - XAU">Gold Ounces – XAU</option>
+                        <option defaultValue="Greece Drachmae - GRD">Greece Drachmae – GRD</option>
+                        <option defaultValue="Guatemalan Quetzal - GTQ">Guatemalan Quetzal – GTQ</option>
+                        <option defaultValue="Holland (Netherlands) Guilders - NLG">Holland (Netherlands) Guilders – NLG</option>
+                        <option defaultValue="Hong Kong Dollars - HKD">Hong Kong Dollars – HKD</option>
+                         
+                        <option defaultValue="Hungary Forint - HUF">Hungary Forint – HUF</option>
+                        <option defaultValue="Iceland Kronur - ISK">Iceland Kronur – ISK</option>
+                        <option defaultValue="IMF Special Drawing Right - XDR">IMF Special Drawing Right – XDR</option>
+                        <option defaultValue="India Rupees - INR">India Rupees – INR</option>
+                        <option defaultValue="Indonesia Rupiahs - IDR">Indonesia Rupiahs – IDR</option>
+                        <option defaultValue="Iran Rials - IRR">Iran Rials – IRR</option>
+                         
+                        <option defaultValue="Iraq Dinars - IQD">Iraq Dinars – IQD</option>
+                        <option defaultValue="Ireland Pounds - IEP*">Ireland Pounds – IEP*</option>
+                        <option defaultValue="Israel New Shekels - ILS">Israel New Shekels – ILS</option>
+                        <option defaultValue="Italy Lire - ITL*">Italy Lire – ITL*</option>
+                        <option defaultValue="Jamaica Dollars - JMD">Jamaica Dollars – JMD</option>
+                        <option defaultValue="Japan Yen - JPY">Japan Yen – JPY</option>
+                         
+                        <option defaultValue="Jordan Dinars - JOD">Jordan Dinars – JOD</option>
+                        <option defaultValue="Kenya Shillings - KES">Kenya Shillings – KES</option>
+                        <option defaultValue="Korea (South) Won - KRW">Korea (South) Won – KRW</option>
+                        <option defaultValue="Kuwait Dinars - KWD">Kuwait Dinars – KWD</option>
+                        <option defaultValue="Lebanon Pounds - LBP">Lebanon Pounds – LBP</option>
+                        <option defaultValue="Luxembourg Francs - LUF">Luxembourg Francs – LUF</option>
+                         
+                        <option defaultValue="Malaysia Ringgits - MYR">Malaysia Ringgits – MYR</option>
+                        <option defaultValue="Malta Liri - MTL">Malta Liri – MTL</option>
+                        <option defaultValue="Mauritius Rupees - MUR">Mauritius Rupees – MUR</option>
+                        <option defaultValue="Mexico Pesos - MXN">Mexico Pesos – MXN</option>
+                        <option defaultValue="Morocco Dirhams - MAD">Morocco Dirhams – MAD</option>
+                        <option defaultValue="Netherlands Guilders - NLG">Netherlands Guilders – NLG</option>
+                         
+                        <option defaultValue="New Zealand Dollars - NZD">New Zealand Dollars – NZD</option>
+                        <option defaultValue="Norway Kroner - NOK">Norway Kroner – NOK</option>
+                        <option defaultValue="Oman Rials - OMR">Oman Rials – OMR</option>
+                        <option defaultValue="Pakistan Rupees - PKR">Pakistan Rupees – PKR</option>
+                        <option defaultValue="Palladium Ounces - XPD">Palladium Ounces – XPD</option>
+                        <option defaultValue="Peru Nuevos Soles - PEN">Peru Nuevos Soles – PEN</option>
+                         
+                        <option defaultValue="Philippines Pesos - PHP">Philippines Pesos – PHP</option>
+                        <option defaultValue="Platinum Ounces - XPT">Platinum Ounces – XPT</option>
+                        <option defaultValue="Poland Zlotych - PLN">Poland Zlotych – PLN</option>
+                        <option defaultValue="Portugal Escudos - PTE">Portugal Escudos – PTE</option>
+                        <option defaultValue="Qatar Riyals - QAR">Qatar Riyals – QAR</option>
+                        <option defaultValue="Romania New Lei - RON">Romania New Lei – RON</option>
+                         
+                        <option defaultValue="Romania Lei - ROL">Romania Lei – ROL</option>
+                        <option defaultValue="Russia Rubles - RUB">Russia Rubles – RUB</option>
+                        <option defaultValue="Saudi Arabia Riyals - SAR">Saudi Arabia Riyals – SAR</option>
+                        <option defaultValue="Silver Ounces - XAG">Silver Ounces – XAG</option>
+                        <option defaultValue="Singapore Dollars - SGD">Singapore Dollars – SGD</option>
+                        <option defaultValue="Slovakia Koruny - SKK">Slovakia Koruny – SKK</option>
+                         
+                        <option defaultValue="Slovenia Tolars - SIT">Slovenia Tolars – SIT</option>
+                        <option defaultValue="South Africa Rand - ZAR">South Africa Rand – ZAR</option>
+                        <option defaultValue="South Korea Won - KRW">South Korea Won – KRW</option>
+                        <option defaultValue="Spain Pesetas - ESP">Spain Pesetas – ESP</option>
+                        <option defaultValue="Special Drawing Rights (IMF) - XDR">Special Drawing Rights (IMF) – XDR</option>
+                        <option defaultValue="Sri Lanka Rupees - LKR">Sri Lanka Rupees – LKR</option>
+                         
+                        <option defaultValue="Sudan Dinars - SDD">Sudan Dinars – SDD</option>
+                        <option defaultValue="Sweden Kronor - SEK">Sweden Kronor – SEK</option>
+                        <option defaultValue="Switzerland Francs - CHF">Switzerland Francs – CHF</option>
+                        <option defaultValue="Taiwan New Dollars - TWD">Taiwan New Dollars – TWD</option>
+                        <option defaultValue="Thailand Baht - THB">Thailand Baht – THB</option>
+                        <option defaultValue="Trinidad and Tobago Dollars - TTD">Trinidad and Tobago Dollars – TTD</option>
+                         
+                        <option defaultValue="Tunisia Dinars - TND">Tunisia Dinars – TND</option>
+                        <option defaultValue="Turkey New Lira - TRY">Turkey New Lira – TRY</option>
+                        <option defaultValue="United Arab Emirates Dirhams - AED">United Arab Emirates Dirhams – AED</option>
+                        <option defaultValue="United Kingdom Pounds - GBP">United Kingdom Pounds – GBP</option>
+                        <option defaultValue="United States Dollars - USD">United States Dollars – USD</option>
+                        <option defaultValue="Venezuela Bolivares - VEB">Venezuela Bolivares – VEB</option>
+                         
+                        <option defaultValue="Vietnam Dong - VND">Vietnam Dong – VND</option>
+                        <option defaultValue="Zambia Kwacha - ZMK">Zambia Kwacha – ZMK</option>
+                        </select>
+                        
+                </div>
+                <div className="form-item">
+                    <label htmlFor="personal-notes">Personal Notes:</label>
+                    <input type="text" placeholder="Notes:" name="personal-notes" id="personal-notes"/>
+                </div>
+                <div className="form-item">
+                    <label htmlFor="privacy">Please select this entries' privacy:</label>
+                    <select name="privacy" id="privacy" required>
+                        <option defaultValue="" disabled>Select Privacy:</option>
+                        <option defaultValue="public">Public</option>
+                        <option defaultValue="private">Private</option>
+                    </select>
+                </div>
+                <div className="form-item">
+                    <a href="#" className="myButton">Cancel</a>
+                </div>
+                <div className="form-item">
+                    <a href="#" className="myButton">Create</a>
+                </div>
+            </form>
+
+        </section>
+
+        <footer>
+            <h4>© 2019-2020 Evan Poe</h4>
+            <a href="#top">
+                <i className="far fa-caret-square-up fa-2x"></i>
+            </a>
+        </footer>
+
+    </main>
+    <script src="https://kit.fontawesome.com/3075e528fd.js" crossorigin="anonymous"></script>
+</body>
+
+</html>

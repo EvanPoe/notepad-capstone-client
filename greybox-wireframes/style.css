@@ -1,0 +1,548 @@
+/*
+The CSS code gets to executed from top to bottom and left ro right
+Basic rules to write CSS
+- write GENERAL rules first (for all the paragraph tags in the website for example) and only after that write CSS for SPECIFIC tags (for example the paragraph tags inside the footer)
+- write the css styles to define for the parent (outside) container and THEN the children (inside containers) of that parent and THEN the children (inside containers) of the child above
+*/
+
+
+/* -------------------------------------
+CSS reset
+Is a short set of CSS rules that resets the styling of all HTML elements to a consistent baseline so the website will look the same on all browsers
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    /*The box-sizing property is used to tell the browser what the sizing properties (width and height) should include border-box.*/
+    box-sizing: border-box;
+    /*reset Chrome user agent styles*/
+    -webkit-margin-before: 0px;
+    -webkit-margin-after: 0px;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-before: 0px;
+    -webkit-padding-after: 0px;
+    -webkit-padding-start: 0px;
+    -webkit-padding-end: 0px;
+    /*reset Firefox user agent styles*/
+    -moz-margin-before: 0px;
+    -moz-margin-after: 0px;
+    -moz-margin-start: 0px;
+    -moz-margin-end: 0px;
+    -moz-padding-before: 0px;
+    -moz-padding-after: 0px;
+    -moz-padding-start: 0px;
+    -moz-padding-end: 0px;
+    /*reset Internet Explorer user agent styles*/
+    -ms-margin-before: 0px;
+    -ms-margin-after: 0px;
+    -ms-margin-start: 0px;
+    -ms-margin-end: 0px;
+    -ms-padding-before: 0px;
+    -ms-padding-after: 0px;
+    -ms-padding-start: 0px;
+    -ms-padding-end: 0px;
+    /*reset Opera user agent styles*/
+    -o-margin-before: 0px;
+    -o-margin-after: 0px;
+    -o-margin-start: 0px;
+    -o-margin-end: 0px;
+    -o-padding-before: 0px;
+    -o-padding-after: 0px;
+    -o-padding-start: 0px;
+    -o-padding-end: 0px;
+  }
+  
+  /* -------------------------------------
+  General styles (General Module, wrapping around the modules below)
+  (the styles used everywhere in the page (like the Body) or styles which are used in more than 2 of the modules below (h2, h3, h4, h5, h6, p, a, ul, li))
+  */
+  
+  body {
+    border: 3px solid white;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  /* font-family: 'Pacifico', cursive;
+  font-family: 'Roboto', sans-serif;
+  font-family: 'Sriracha', cursive; */
+  
+  h1 {
+    margin-top: 60px;
+    font-family: 'Sriracha', cursive;
+  }
+  
+  h2 {
+    font-size: 40px;
+  }
+  
+  h3 {
+    font-size: 24px;
+  }
+  
+  h1, h2, h3 {
+    text-align: center;
+  }
+  
+  div {
+    margin-bottom: 4px;
+  }
+
+  a {
+    color: blue;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: white;
+  }
+  
+  p {
+    text-align: center;
+    font-size: 14px;
+    margin-top: 4px;
+  }
+  
+  section {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  label {
+    display: block;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+  input, select {
+    padding: 5px 10px;
+    width: 95%;
+    max-width: 250px;
+    display: block;
+    margin: 20px auto;
+    border-radius: 6px;
+    border: 1px solid #CCC;
+  }
+  
+  .myButton, button {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    max-width: 225px;
+    text-align: center;
+    box-shadow: inset 0px 1px 0px 0px #a4e271;
+    background: linear-gradient(to bottom, #89c403 5%, #77a809 100%);
+    background-color: #89c403;
+    border-radius: 6px;
+    border: 1px solid #74b807;
+    display: block;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: Arial;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 6px 24px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #528009;
+    width: 95%;
+  }
+  .myButton:hover, button:hover {
+    background:linear-gradient(to bottom, #77a809 5%, #89c403 100%);
+    background-color:#77a809;
+  }
+  .myButton:active, button:active {
+    position:relative;
+    top:1px;
+  }
+  
+  .buttonWrapper {
+    width: 100%;
+    text-align: center;
+    display: block;
+  }
+  
+  .selected-icon {
+    color: red;
+  }
+  
+  
+  
+  /* -------------------------------------
+  Header styles (Main Module)
+  (all the styles inside the < header > or < nav > tags)
+  */
+
+  header {
+    width: 100%;
+    border-bottom: 2px solid grey;
+    display: block;
+    position: fixed;
+    top: 0;
+    background: -webkit-linear-gradient(top, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
+    padding: 20px 10px;
+  }
+
+  header h4, header nav {
+    width: auto;
+    display: inline-block;
+  }
+
+  header h4 {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: white;
+    size: 120%;
+  }
+
+  header nav {
+    float: right;
+  }
+
+  header nav ul {
+    list-style-type: none;
+  }
+
+  header nav ul li {
+    width: auto;
+    display: inline-block;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-right: 1px solid white;
+  }
+
+  header nav ul li:last-child {
+    border-right: none;
+  }
+  
+  /* -------------------------------------
+  Content styles (Main Module)
+  (all the styles inside the < sections > or < aside > tags)
+  */
+  
+  main.container {
+    max-width: 1080px;
+    margin: 100px auto;
+  }
+  
+  form {
+    color: #FFFFFF;
+  }
+  
+  .sign-in {
+    border: 2px black solid;
+    background-color: #EEEEEE;
+    margin-top: 40px;
+    padding: 0px 10px 40px 10px;
+    background: -webkit-linear-gradient(top, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
+    width: 80%;
+  }
+  
+  .registration {
+    border: 2px black solid;
+    margin-top: 40px;
+    padding: 0px 10px 40px 10px;
+    background: -webkit-linear-gradient(top, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
+     width: 80%;
+  }
+  
+  section {
+    border: 2px black solid;
+    margin-top: 40px;
+    padding: 0px 10px 40px 10px;
+    background: -webkit-linear-gradient(top, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
+    width: 80%;
+  }
+
+  section.item-wrapper {
+      display: block;
+      width: 100%;
+      border-bottom: 1px solid white;
+  }
+
+  section .item-wrapper:last-child {
+      border-bottom: none;
+  }
+
+  section .item-wrapper .item-column {
+      width: 49%;
+      display: inline-block;
+      /* border: 1px solid black; */
+      vertical-align: top;
+      padding: 15px;
+      text-align: left;
+  }
+
+  section .item-wrapper .item-column .item-image {
+    width: 100%;
+    border-radius: 15px;
+    border: 1px solid white;
+  }
+
+  section .item-wrapper .item-column h3.item-title {
+      text-align: left;
+      margin-bottom: 15px;
+  }
+
+  section .item-wrapper .item-column p.item-notes {
+    text-align: left;
+    margin-bottom: 15px;
+  }
+ 
+  section .item-wrapper .item-column .item-details {
+    display: block;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    list-style-type: none;
+  }
+
+  section .item-wrapper .item-column .item-details li {
+      border-top: 1px solid white;
+      padding-top: 10px;
+      padding-bottom: 10px;
+  }
+
+  section .item-wrapper .item-column .item-details li:last-child {
+    border-bottom: 1px solid white;
+  }
+  
+  div.blueTable {
+    border: 1px solid #AAAAAA;
+    margin-top: 10px;
+    background-color: #EEEEEE;
+    width: 95%;
+    /* max-width: 350px; */
+    text-align: left;
+    border-collapse: collapse;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .divTable.blueTable:nth-child(odd) {
+    clear: left;
+  }
+  
+  .clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  
+  .fullWidth {
+    width: 100% !important;
+    float: none !important;
+  }
+  
+  .divTable.blueTable .divTableCell, .divTable.blueTable .divTableHead {
+    border: 1px solid #AAAAAA;
+    padding: 10px 8px;
+  }
+  
+  .divTable.blueTable .divTableBody .divTableCell {
+    font-size: 13px;
+  }
+  
+  .divTable.blueTable .divTableRow:nth-child(even) {
+    background: #D0E4F5;
+  }
+  
+  .divTable.blueTable .divTableHeading {
+    background: #1C6EA4;
+    background: -moz-linear-gradient(top, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
+    background: -webkit-linear-gradient(top, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
+    background: linear-gradient(to bottom, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
+    border-bottom: 2px solid #444444;
+  }
+  
+  .divTable.blueTable .divTableHeading .divTableHead {
+    font-size: 15px;
+    font-weight: bold;
+    color: #FFFFFF;
+    text-align: left;
+    border-left: 2px solid #D0E4F5;
+  }
+  
+  .divTable.blueTable .divTableHeading .divTableHead:first-child {
+    border-left: none;
+  }
+  
+  .blueTable .tableFootStyle {
+    font-size: 14px;
+  }
+  
+  .blueTable .tableFootStyle .links {
+       text-align: right;
+  }
+  
+  .blueTable .tableFootStyle .links a{
+    display: inline-block;
+    background: #1C6EA4;
+    color: #FFFFFF;
+    padding: 2px 8px;
+    border-radius: 5px;
+  }
+  
+  .blueTable.outerTableFooter {
+    border-top: none;
+  }
+  
+  .blueTable.outerTableFooter .tableFootStyle {
+    padding: 3px 5px; 
+  }
+  
+  .divTable{ display: table; }
+  .divTableRow { display: table-row; }
+  .divTableHeading { display: table-header-group;}
+  .divTableCell, .divTableHead { display: table-cell;}
+  .divTableHeading { display: table-header-group;}
+  .divTableFoot { display: table-footer-group;}
+  .divTableBody { display: table-row-group;}
+  
+  
+  
+  .myButton.red {
+    box-shadow:inset 0px 1px 0px 0px #f5978e;
+    background:linear-gradient(to bottom, #f24537 5%, #c62d1f 100%);
+    background-color:#f24537;
+    border:1px solid #d02718;
+    text-shadow:0px 1px 0px #810e05;
+  }
+  .myButton.red:hover {
+    background:linear-gradient(to bottom, #c62d1f 5%, #f24537 100%);
+    background-color:#c62d1f;
+  }
+  .myButton.red:active {
+    position:relative;
+    top:1px;
+  }
+  
+  .alert {
+    margin: 4px;
+    padding: 4px;
+    text-align: center;
+    border-radius: 6px;
+    color: black;
+    
+  }
+  
+  .alert-success {
+    background-color: lightgreen;
+  }
+  
+  .alert-warning {
+    background-color: lightgoldenrodyellow;
+    
+  }
+  
+  .alert-failure {
+    background-color: lightpink
+  }
+  
+  .alert-info {
+    background-color: lightgray;
+  }
+  
+  .completed {
+    margin-right: 60px;
+  }
+  
+  
+  /* -------------------------------------
+  Footer styles (Main Module)
+  (all the styles inside the < footer > tag)
+  */
+
+  footer {
+    margin-top: 50px;
+    margin-bottom: 15px;
+    border: 0px;
+  }
+  
+  footer h4 {
+    display: block;
+    text-align: center;
+    font-weight: bold;
+  }
+  
+  footer a i.far {
+    display: block;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    color: #163a8b;
+  }
+  
+  footer a:hover i.far {
+    color: #081e6f;
+  }
+  
+  /* -------------------------------------
+  place all the desktop styles above this line
+  Responsive styles
+  (the very last module in the CSS, contains all the media queries and it is dealing with the compatibility with mobiles and tablets)
+  place all the mobile tables styles below this line
+  */
+  
+  /* mobile first approach = (the website was built initialy for mobiles and it will be adapted for desktop)
+  This is the ideal way to built websites because it is much easier to adapt from a small screen and low computing power (mobiles) to a large screen and high computing power (desktops)
+  */
+  
+  /*iPhone portrait*/
+  @media only screen and (min-width: 320px) {
+    body {
+        border: 3px solid purple;
+    }
+  
+  }
+  
+  /*iPhone landscape*/
+  @media only screen and (min-width: 480px) {
+    body {
+        border: 3px solid green;
+    }
+  }
+  
+  /*Android landscape*/
+  @media only screen and (min-width: 640px) {
+    body {
+        border: 3px solid brown;
+    }
+  }
+  
+  /*iPad potrait*/
+  @media only screen and (min-width: 768px) {
+    body {
+        border: 3px solid red;
+    }
+  }
+  
+  /*iPad lanscape / small laptop*/
+  @media only screen and (min-width: 1024px) {
+    body {
+        border: 3px solid blue;
+    }
+  
+    div.blueTable {
+      margin: 0 0.3em;
+      margin-bottom: 0.5em;
+      width: calc(50% - 0.6em);
+      padding: 1.5em;
+      float: left;
+    }
+  }
+  
+  /*large desktop*/
+  @media only screen and (min-width: 1600px) {
+    body {
+        border: 3px solid yellow;
+    }
+  }
+  
+  
+    
+  
+  
+    

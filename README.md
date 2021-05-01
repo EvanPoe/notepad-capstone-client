@@ -76,14 +76,23 @@ Log-in Page Wireframe
             * __Login.js__ (stateful) -
             * __Register.js__ (stateful) -
         * __Navbar.js__ (stateless) -
+        * __Dashboard.js__ (stateless) -
+        * __AddNote.js__ (stateless) -
+        * __EditNote.js__ (stateless) -
+        
 
 
 
-### 7. Back-end Structure - Business Objects (to do later)
-* (Example) Users (database table)
+### 7. Back-end Structure - Business Objects
+* Users (database table)
     * id (auto-generated)
     * username (email validation)
-    * password (at least 8 chars, at least one alpha and a special character validation)
+    * password (at least one number, one lowercase and one uppercase letter at least eight characters that are letters, numbers or the underscore validation)
+* Notes (database table)
+    * item_id
+    * user_id
+    * title (string varchar255 ex: Grocery List)
+    * content (string varchar255 ex: milk, eggs, meat...)
 
 
 
