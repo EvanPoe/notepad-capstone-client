@@ -1,4 +1,4 @@
-# Note Pad Capstone Client (to do now)
+# Note Pad Capstone Client
 A hub for travel enthusiasts to store information and see public information stored by other users
 
 
