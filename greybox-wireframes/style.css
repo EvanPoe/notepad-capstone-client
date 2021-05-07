@@ -73,6 +73,7 @@ Is a short set of CSS rules that resets the styling of all HTML elements to a co
   h1 {
     margin-top: 60px;
     font-family: 'Sriracha', cursive;
+    color: white;
   }
   
   h2 {
@@ -92,12 +93,12 @@ Is a short set of CSS rules that resets the styling of all HTML elements to a co
   }
 
   a {
-    color: black;
+    color: white;
     text-decoration: none;
   }
 
   a:hover {
-    color: white;
+    color: rgba(255, 255, 255, 0.651);
   }
   
   p {
