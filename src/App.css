@@ -183,7 +183,7 @@ header {
   display: block;
   position: fixed;
   top: 0;
-  background-image: url(website-images/background/wood-pattern.png);
+  background-image: url(https://raw.githubusercontent.com/EvanPoe/notepad-capstone-client/main/public/website-images/background/wood-pattern.png);
   background-color: #3b2616;
   /* background: -webkit-linear-gradient(top, #f0b7a1 0%,#8c3310 46%,#722d12 51%,#bf6e4e 100%); */
   padding: 20px 10px;
@@ -239,7 +239,7 @@ section, .registration, .sign-in {
   background-color: #EEEEEE;
   margin-top: 40px;
   padding: 0px 10px 40px 10px;
-  background-image: url(website-images/background/wood-pattern.png);
+  background-image: url(https://raw.githubusercontent.com/EvanPoe/notepad-capstone-client/main/public/website-images/background/wood-pattern.png);
   background-color: #3b2616;    width: 80%;
 }
 
