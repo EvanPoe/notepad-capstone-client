@@ -1,5 +1,5 @@
 # Note Pad Capstone Client
-A hub for travel enthusiasts to store information and see public information stored by other users
+Busy schedule? Do you find it difficult to keep track of everything? NotePad is a place to store all your notes-anything you need to save, available anytime you need it!
 
 
 ### 1. Working Prototype (to do later)

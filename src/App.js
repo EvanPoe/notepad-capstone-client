@@ -1,19 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
+import React, { Component } from "react";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+import Header from "./components/Header";
+import LandingPage from "./components/LandingPage";
+import SignIn from "./components/SignIn";
+import Registration from "./components/Registration";
+import DashboardPage from "./components/DashboardPage";
+import AddItemPage from "./components/AddItemPage";
+import EditItemPage from "./components/EditItemPage";
+import Footer from "./components/Footer";
+import "./normalize.css";
+import "./App.css";
 
-<head>
-    <meta charset="utf-8">
-    <title>Note Pad Capstone</title>
-    <link rel="stylesheet" type="text/css" href="normalize.css" />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300&family=Pacifico&family=Roboto&family=Sriracha&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" type="text/css"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
-    <link rel="stylesheet" type="text/css" href="style.css" />
-</head>
+export class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      workouts: [],
+      error: null,
+    };
+  }
 
-<body>
+
+  render() {
+    return (
+      <div className="App">
     <header className='clearfix'>
         <h4>NotePad</h4>
         <nav className="nav">
@@ -226,7 +236,22 @@
         </footer>
 
     </main>
-    <script src="https://kit.fontawesome.com/3075e528fd.js" crossorigin="anonymous"></script>
-</body>
+    
+        {/* <BrowserRouter>
+          <Header />
+          <Switch>
+            <Route exact path='/' component={LandingPage}/>
+            <Route exact path='/sign-in' component={SignIn}/>
+            <Route exact path='/registration' component={Registration}/>
+            <Route exact path='/dashboard-page' component={DashboardPage}/>
+            <Route exact path='/add-item-page' component={AddItemPage}/>
+            <Route exact path='/edit-item-page/:itemId' component={EditItemPage}/>
+          </Switch>
+          <Footer />
+        </BrowserRouter> */}
+      </div>
+    );
+  }
+}
 
-</html>
+export default App;
