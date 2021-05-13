@@ -419,7 +419,7 @@ export class DashboardPage extends Component {
     return (
       <div>
         <section className="dashboard-page">
-          <h1>Travel Dashboard</h1>
+          <h1>NotePad Dashboard</h1>
           {showItemByUserId}
         </section>
       </div>

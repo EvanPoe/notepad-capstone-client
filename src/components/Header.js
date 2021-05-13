@@ -16,7 +16,7 @@ export class Header extends Component {
     return (
       <div>
         <header className="clearfix">
-          <h4>Travel Bucket</h4>
+          <h4>NotePad</h4>
           <nav className="nav">
             {TokenService.hasAuthToken() ? (
               <ul className="link">
@@ -29,7 +29,7 @@ export class Header extends Component {
                 <li>
                   <a className="nav-link-item" href="/add-item-page">
                     <i className="fas fa-plus-circle"></i>
-                    <span className="navlink-text">New Item</span>
+                    <span className="navlink-text">New Note</span>
                   </a>
                 </li>
                 <li>
