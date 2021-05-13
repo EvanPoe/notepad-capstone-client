@@ -150,6 +150,9 @@ export class App extends Component {
         <section className="dashboard-page">
 
             <h1>Welcome to Your Dashboard!</h1>
+            <div className="alert alert-success">
+                <i className="fas fa-check"></i> <strong>Success</strong> Note Deleted Sucessfully!!
+            </div>
             <div className="item-wrapper">
                 <h3 className="item-title">Note 1</h3>
                 <p className="item-notes">Here are the user's notes</p>
@@ -170,6 +173,9 @@ export class App extends Component {
                     <i className="fas fa-trash-alt"></i> DELETE
                 </button>
             </div>
+            <button type="submit" className="myButton">
+                <i className="fas fa-trash-alt"></i> Add Note
+            </button>
         </section>
 
 
@@ -229,7 +235,7 @@ export class App extends Component {
         </section>
 
         <footer>
-            <h4>© 2019-2020 Evan Poe</h4>
+            <h4>© 2019-2021 Evan Poe</h4>
             <a href="#top">
                 <i className="far fa-caret-square-up fa-2x"></i>
             </a>
