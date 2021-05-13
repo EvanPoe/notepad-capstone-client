@@ -140,6 +140,12 @@ export class App extends Component {
                 <h3 className="item-title">Welcome to NotePad!</h3>
                 <p className="item-notes">Here you can create and save notes for literally anything!</p>
             </div>
+            <div className="form-item">
+                <a href="#" className="myButton">Sign-In</a>
+            </div>
+            <div className="form-item">
+                <a href="#" className="myButton">Register</a>
+            </div>
         </section>
 
 
