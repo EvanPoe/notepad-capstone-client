@@ -116,7 +116,7 @@ export class SignIn extends Component {
 
 
           <form className="sign-in-form" onSubmit={this.handleSubmit}>
-          <h1>Travel Bucket Sign-In</h1>
+          <h1>NotePad Sign-In</h1>
           <fieldset className="welcome-fieldset">
             {errorMessage}
             <div className="login-message">

@@ -122,7 +122,7 @@ export class Registration extends Component {
           </div> */}
 
           <form className="registration-form" onSubmit={this.handleSubmit}>
-            <h1>Travel Bucket Registration</h1>
+            <h1>NotePad Registration</h1>
             <fieldset className="welcome-fieldset">
               <div className="create-user-message">
                 <h3>Sign Up for an Account </h3>

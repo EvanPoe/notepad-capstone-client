@@ -24,7 +24,7 @@ export class App extends Component {
   render() {
     return (
       <div className="App">
-    <header className='clearfix'>
+    {/* <header className='clearfix'>
         <h4>NotePad</h4>
         <nav className="nav">
             <ul className='link'>
@@ -247,9 +247,9 @@ export class App extends Component {
             </a>
         </footer>
 
-    </main>
+    </main> */}
     
-        {/* <BrowserRouter>
+        <BrowserRouter>
           <Header />
           <Switch>
             <Route exact path='/' component={LandingPage}/>
@@ -260,7 +260,7 @@ export class App extends Component {
             <Route exact path='/edit-item-page/:itemId' component={EditItemPage}/>
           </Switch>
           <Footer />
-        </BrowserRouter> */}
+        </BrowserRouter>
       </div>
     );
   }
