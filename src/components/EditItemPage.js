@@ -15,13 +15,14 @@ export class EditItemPage extends Component {
   }
 
   componentDidMount() {
-    let currentUser = TokenService.getUserId();
+    // let currentUser = TokenService.getUserId();
+    let currentUser = 1;
     // console.log(currentUser);
 
     //if the user is not logged in, send him to landing page
-    if (!TokenService.hasAuthToken()) {
-      window.location = "/";
-    }
+    // if (!TokenService.hasAuthToken()) {
+    //   window.location = "/";
+    // }
 
     const itemId = this.props.match.params.itemId;
 
