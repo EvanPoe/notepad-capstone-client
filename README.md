@@ -89,7 +89,7 @@ Log-in Page Wireframe
     * username (email validation)
     * password (at least one number, one lowercase and one uppercase letter at least eight characters that are letters, numbers or the underscore validation)
 * Notes (database table)
-    * item_id
+    * id
     * user_id
     * title (string varchar255 ex: Grocery List)
     * content (string varchar255 ex: milk, eggs, meat...)
