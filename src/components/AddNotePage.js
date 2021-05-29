@@ -3,11 +3,11 @@ import config from "../config";
 import TokenService from "../services/token-service";
 import { Link } from "react-router-dom";
 
-export class AddItemPage extends Component {
+export class AddNotePage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      itemsByUserId: [],
+      notesByUserId: [],
       error: null,
       // databaseWorkouts: [],
     };
@@ -56,7 +56,7 @@ export class AddItemPage extends Component {
     };
 
     //useing the url and parameters above make the api call
-    fetch(`${config.API_ENDPOINT}/items`, options)
+    fetch(`${config.API_ENDPOINT}/notes`, options)
       // if the api returns data ...
       .then((res) => {
         if (!res.ok) {
@@ -70,7 +70,7 @@ export class AddItemPage extends Component {
         //check if there is meaningfull data
         // console.log(data);
         // check if there are no results
-        if (data.totalItems === 0) {
+        if (data.totalNotes === 0) {
           throw new Error("No data found");
         }
         window.location.href = "/dashboard-page";
@@ -94,11 +94,11 @@ export class AddItemPage extends Component {
     );
     return (
       <div>
-        <section className="add-item-page">
+        <section className="add-note-page">
           <h1>New Note</h1>
-          <form className="create-new-item" onSubmit={this.handleSubmit}>
+          <form className="create-new-note" onSubmit={this.handleSubmit}>
             {errorMessage}
-            <div className="add-item">
+            <div className="add-note">
               <label htmlFor="keyword-search">Enter a Title</label>
               <input
                 type="text"
@@ -109,7 +109,7 @@ export class AddItemPage extends Component {
               />
             </div>
 
-            <div className="form-item">
+            <div className="form-note">
               <label htmlFor="personal-notes">Personal Notes:</label>
               <input
                 type="text"
@@ -119,12 +119,12 @@ export class AddItemPage extends Component {
               />
             </div>
 
-            <div className="form-item">
+            <div className="form-note">
               <Link to="/dashboard-page" className="myButton">
                 <i class="fas fa-edit"></i>Cancel
               </Link>
             </div>
-            <div className="form-item">
+            <div className="form-note">
               <input type="submit" value="SUBMIT" className="myButton" />
             </div>
           </form>
@@ -134,4 +134,4 @@ export class AddItemPage extends Component {
   }
 }
 
-export default AddItemPage;
+export default AddNotePage;

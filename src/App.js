@@ -5,8 +5,8 @@ import LandingPage from "./components/LandingPage";
 import SignIn from "./components/SignIn";
 import Registration from "./components/Registration";
 import DashboardPage from "./components/DashboardPage";
-import AddItemPage from "./components/AddItemPage";
-import EditItemPage from "./components/EditItemPage";
+import AddNotePage from "./components/AddNotePage";
+import EditNotePage from "./components/EditNotePage";
 import Footer from "./components/Footer";
 import "./normalize.css";
 import "./App.css";
@@ -29,31 +29,31 @@ export class App extends Component {
         <nav className="nav">
             <ul className='link'>
                 <li>
-                    <a className="nav-link-item" href="/log-in">
+                    <a className="nav-link-note" href="/log-in">
                         <i className="fas fa-edit"></i>
                         <span className='navlink-text'>Log-in</span>
                     </a>
                 </li>
                 <li>
-                    <a className="nav-link-item" href="/register">
+                    <a className="nav-link-note" href="/register">
                         <i className="fas fa-sign-out-alt"></i>
                         <span className='navlink-text'>Register</span>
                     </a>
                 </li>
                 <li>
-                    <a className="nav-link-item" href="/dashboard">
+                    <a className="nav-link-note" href="/dashboard">
                         <i className="fas fa-question-circle"></i>
                         <span className='navlink-text'>Dashboard</span>
                     </a>
                 </li>
                 <li>
-                    <a className="nav-link-item" href="/new-item">
+                    <a className="nav-link-note" href="/new-note">
                         <i className="fas fa-plus-circle"></i>
-                        <span className='navlink-text'>New Item</span>
+                        <span className='navlink-text'>New Note</span>
                     </a>
                 </li>
                 <li>
-                    <a className="nav-link-item" href="/" onClick={this.logOutClick}>
+                    <a className="nav-link-note" href="/" onClick={this.logOutClick}>
                         <i className="fas fa-sign-out-alt"></i>
                         <span className='navlink-text'>Log-Out</span>
                     </a>
@@ -82,19 +82,19 @@ export class App extends Component {
 
             <form className="registration-form">
                 <h1>NotePad Registration</h1>
-                <div className="form-item">
+                <div className="form-note">
                     <label htmlFor="register-email">Email</label>
                     <input type="text" placeholder="email" required="" id="register-email" />
                 </div>
-                <div className="form-item">
+                <div className="form-note">
                     <label htmlFor="register-password">Password</label>
                     <input type="text" placeholder="password" required="" id="register-password" />
                 </div>
-                <div className="form-item">
+                <div className="form-note">
                     <label htmlFor="register-confirm-password">Confirm Password</label>
                     <input type="text" placeholder="confirm-password" required="" id="register-confirm-password" />
                 </div>
-                <div className="form-item">
+                <div className="form-note">
                     <a href="#" className="myButton">Register</a>
                     <p>Already have an account? <a href="#">Sign In</a></p>
                 </div>
@@ -115,15 +115,15 @@ export class App extends Component {
             <form className="sign-in-form">
                 <h1>NotePad Sign-In</h1>
 
-                <div className="form-item">
+                <div className="form-note">
                     <label htmlFor="sign-in-email">Email</label>
                     <input type="text" placeholder="email" required="" id="sign-in-email" />
                 </div>
-                <div className="form-item">
+                <div className="form-note">
                     <label htmlFor="sign-in-password">Password</label>
                     <input type="text" placeholder="password" required="" id="sign-in-password" />
                 </div>
-                <div className="form-item">
+                <div className="form-note">
                     <a href="#" className="myButton">Sign-In</a>
                     <p>Need to create an account? <a href="#">Register</a></p>
                 </div>
@@ -136,14 +136,14 @@ export class App extends Component {
         <section className="landing-page">
             <h1>NotePad</h1>
 
-            <div className="item-wrapper">
-                <h3 className="item-title">Welcome to NotePad!</h3>
-                <p className="item-notes">Here you can create and save notes for literally anything!</p>
+            <div className="note-wrapper">
+                <h3 className="note-title">Welcome to NotePad!</h3>
+                <p className="note-notes">Here you can create and save notes for literally anything!</p>
             </div>
-            <div className="form-item">
+            <div className="form-note">
                 <a href="#" className="myButton">Sign-In</a>
             </div>
-            <div className="form-item">
+            <div className="form-note">
                 <a href="#" className="myButton">Register</a>
             </div>
         </section>
@@ -159,9 +159,9 @@ export class App extends Component {
             <div className="alert alert-success">
                 <i className="fas fa-check"></i> <strong>Success</strong> Note Deleted Sucessfully!!
             </div>
-            <div className="item-wrapper">
-                <h3 className="item-title">Note 1</h3>
-                <p className="item-notes">Here are the user's notes</p>
+            <div className="note-wrapper">
+                <h3 className="note-title">Note 1</h3>
+                <p className="note-notes">Here are the user's notes</p>
                 <button type="submit" className="myButton">
                     <i className="fas fa-trash-alt"></i> Edit
                 </button>
@@ -169,9 +169,9 @@ export class App extends Component {
                     <i className="fas fa-trash-alt"></i> DELETE
                 </button>
             </div>
-            <div className="item-wrapper">
-                <h3 className="item-title">Note 2</h3>
-                <p className="item-notes">Here are the user's notes</p>
+            <div className="note-wrapper">
+                <h3 className="note-title">Note 2</h3>
+                <p className="note-notes">Here are the user's notes</p>
                 <button type="submit" className="myButton">
                     <i className="fas fa-trash-alt"></i> Edit
                 </button>
@@ -186,54 +186,54 @@ export class App extends Component {
 
 
 
-        <section className="add-item-page">
+        <section className="add-note-page">
             <h1>New Note</h1>
-            <form className="create-new-item">
+            <form className="create-new-note">
                 <div className="alert alert-info">
                     <i className="fas fa-info"></i> <strong>Info</strong> Please enter a valid title!!
                 </div>
                 <div className="alert alert-info">
                     <i className="fas fa-info"></i> <strong>Info</strong> Please enter a valid note!!
                 </div>
-                <div className="add-item">
+                <div className="add-note">
                     <label htmlFor="note-title">Enter a title</label>
                     <input type="text" placeholder="Title" required="" id="note-title" />
                 </div>
-                <div className="form-item">
+                <div className="form-note">
                     <label htmlFor="personal-notes">Notes:</label>
                     <input type="text" placeholder="Notes:" name="personal-notes" id="personal-notes" />
                 </div>
-                <div className="form-item">
+                <div className="form-note">
                     <a href="#" className="myButton">Cancel</a>
                 </div>
-                <div className="form-item">
+                <div className="form-note">
                     <a href="#" className="myButton">Save</a>
                 </div>
             </form>
 
         </section>
 
-        <section className="edit-item-page">
+        <section className="edit-note-page">
             <h1>Edit Note</h1>
-            <form className="create-new-item">
+            <form className="create-new-note">
                 <div className="alert alert-info">
                     <i className="fas fa-info"></i> <strong>Info</strong> Please enter a valid title!!
                 </div>
                 <div className="alert alert-info">
                     <i className="fas fa-info"></i> <strong>Info</strong> Please enter a valid note!!
                 </div>
-                <div className="add-item">
+                <div className="add-note">
                     <label htmlFor="note-title">Title: </label>
                     <input type="text" placeholder="Old Title" required="" id="note-title" />
                 </div>
-                <div className="form-item">
+                <div className="form-note">
                     <label htmlFor="personal-notes">Notes: </label>
                     <input type="text" placeholder="Old Notes:" name="personal-notes" id="personal-notes" />
                 </div>
-                <div className="form-item">
+                <div className="form-note">
                     <a href="#" className="myButton">Cancel</a>
                 </div>
-                <div className="form-item">
+                <div className="form-note">
                     <a href="#" className="myButton">Save</a>
                 </div>
             </form>
@@ -256,8 +256,8 @@ export class App extends Component {
             <Route exact path='/sign-in' component={SignIn}/>
             <Route exact path='/registration' component={Registration}/>
             <Route exact path='/dashboard-page' component={DashboardPage}/>
-            <Route exact path='/add-item-page' component={AddItemPage}/>
-            <Route exact path='/edit-item-page/:itemId' component={EditItemPage}/>
+            <Route exact path='/add-note-page' component={AddNotePage}/>
+            <Route exact path='/edit-note-page/:noteId' component={EditNotePage}/>
           </Switch>
           <Footer />
         </BrowserRouter>

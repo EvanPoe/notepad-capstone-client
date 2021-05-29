@@ -37,7 +37,7 @@ This app is for two types of users: a visitor and a logged-in user
 ###### Edit Note Page (Importance - High) (Est: 3h)
 * As a logged-in user,
 * I want to be able to edit a note and its title, starting with the note in its previously saved state, or cancel,
-* So I can update my item and save it to the dashboard.
+* So I can update my note and save it to the dashboard.
 
 ### 3. Functionality
 The app's functionality includes:

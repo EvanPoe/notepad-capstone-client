@@ -3,14 +3,14 @@ import config from "../config";
 import TokenService from "../services/token-service";
 import { Link } from "react-router-dom";
 
-export class EditItemPage extends Component {
+export class EditNotePage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      itemsByUserId: [],
+      notesByUserId: [],
       error: null,
       // databaseWorkouts: [],
-      currentItem: {},
+      currentNote: {},
     };
   }
 
@@ -24,11 +24,11 @@ export class EditItemPage extends Component {
     //   window.location = "/";
     // }
 
-    const itemId = this.props.match.params.itemId;
+    const noteId = this.props.match.params.noteId;
 
-    // console.log(itemId);
+    // console.log(noteId);
 
-    let url = `${config.API_ENDPOINT}/items/${itemId}`;
+    let url = `${config.API_ENDPOINT}/notes/${noteId}`;
 
     // console.log(url)
 
@@ -39,7 +39,7 @@ export class EditItemPage extends Component {
         // console.log(data);
 
         this.setState({
-          currentItem: data,
+          currentNote: data,
         });
       })
 
@@ -79,10 +79,10 @@ export class EditItemPage extends Component {
       body: JSON.stringify(payload),
     };
 
-    const itemId = this.props.match.params.itemId;
+    const noteId = this.props.match.params.noteId;
 
     //useing the url and parameters above make the api call
-    fetch(`${config.API_ENDPOINT}/items/${itemId}`, options)
+    fetch(`${config.API_ENDPOINT}/notes/${noteId}`, options)
       // if the api returns data ...
       .then((res) => {
         if (!res.ok) {
@@ -96,7 +96,7 @@ export class EditItemPage extends Component {
         //check if there is meaningfull data
         // console.log(data);
         // check if there are no results
-        if (data.totalItems === 0) {
+        if (data.totalNotes === 0) {
           throw new Error("No data found");
         }
         window.location.href = "/dashboard-page";
@@ -121,11 +121,11 @@ export class EditItemPage extends Component {
 
     return (
       <div>
-        <section className="add-item-page">
-          <h1>Edit Item</h1>
-          <form className="create-new-item" onSubmit={this.handleSubmit}>
+        <section className="add-note-page">
+          <h1>Edit Note</h1>
+          <form className="create-new-note" onSubmit={this.handleSubmit}>
             {errorMessage}
-            <div className="add-item">
+            <div className="add-note">
               <label htmlFor="keyword-search">Enter a Title</label>
               <input
                 type="text"
@@ -133,31 +133,31 @@ export class EditItemPage extends Component {
                 name="keyword"
                 required
                 id="keyword-search"
-                defaultValue={this.state.currentItem.keyword}
+                defaultValue={this.state.currentNote.keyword}
               />
             </div>
                         
             
 
-            <div className="form-item">
+            <div className="form-note">
               <label htmlFor="personal-notes">Notes:</label>
               <input
                 type="text"
                 placeholder="Notes:"
                 name="notes"
                 id="personal-notes"
-                defaultValue={this.state.currentItem.notes}
+                defaultValue={this.state.currentNote.notes}
               />
             </div>
 
-            <div className="form-item">
+            <div className="form-note">
                     <Link to="/dashboard-page" className="myButton">
                     <i class="fas fa-edit"></i>Cancel
                     </Link>
                   </div>
             
 
-            <div className="form-item">
+            <div className="form-note">
               <input
                 type="submit"
                 value="CONFIRM CHANGES"
@@ -171,4 +171,4 @@ export class EditItemPage extends Component {
   }
 }
 
-export default EditItemPage;
+export default EditNotePage;

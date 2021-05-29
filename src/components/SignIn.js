@@ -17,10 +17,10 @@ export class SignIn extends Component {
 
     //take the query parameters and format them for the api call
   formatQueryParams(params) {
-    const queryItems = Object.keys(params).map(
+    const queryNotes = Object.keys(params).map(
       (key) => `${encodeURIComponent(key)}=${encodeURIComponent(params[key])}`
     );
-    return queryItems.join("&");
+    return queryNotes.join("&");
   }
 
   validateEmail(inputEmail) {

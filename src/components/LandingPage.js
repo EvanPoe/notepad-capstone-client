@@ -8,15 +8,15 @@ export class LandingPage extends Component {
         <section className="landing-page">
             <h1>NotePad</h1>
 
-            <div className="item-wrapper">
-                <h3 className="item-title">Welcome to NotePad!</h3>
-                <p className="item-notes">Here you can create and save notes for literally anything!</p>
+            <div className="note-wrapper">
+                <h3 className="note-title">Welcome to NotePad!</h3>
+                <p className="note-notes">Here you can create and save notes for literally anything!</p>
             </div>
-            {/* <div className="form-item">
+            {/* <div className="form-note">
                 <a href="#" className="myButton">Sign-In</a>
             </div> */}
             <NavLink to='/registration' className="new-user-cta"> Create an Account Here...</NavLink>
-            {/* <div className="form-item">
+            {/* <div className="form-note">
                 <a href="#" className="myButton">Register</a>
             </div> */}
             <p>

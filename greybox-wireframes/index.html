@@ -20,32 +20,32 @@
             <ul class='link'>
                 <!-- navigation for visitors -->
                 <li>
-                    <a class="nav-link-item" href="/log-in">
+                    <a class="nav-link-note" href="/log-in">
                         <i class="fas fa-edit"></i>
                         <span class='navlink-text'>Log-in</span>
                     </a>
                 </li>
                 <li>
-                    <a class="nav-link-item" href="/register">
+                    <a class="nav-link-note" href="/register">
                         <i class="fas fa-sign-out-alt"></i>
                         <span class='navlink-text'>Register</span>
                     </a>
                 </li>
                 <!-- navigation for logged in users -->
                 <li>
-                    <a class="nav-link-item" href="/dashboard">
+                    <a class="nav-link-note" href="/dashboard">
                         <i class="fas fa-question-circle"></i>
                         <span class='navlink-text'>Dashboard</span>
                     </a>
                 </li>
                 <li>
-                    <a class="nav-link-item" href="/new-item">
+                    <a class="nav-link-note" href="/new-note">
                         <i class="fas fa-plus-circle"></i>
-                        <span class='navlink-text'>New Item</span>
+                        <span class='navlink-text'>New Note</span>
                     </a>
                 </li>
                 <li>
-                    <a class="nav-link-item" href="/" onClick={this.logOutClick}>
+                    <a class="nav-link-note" href="/" onClick={this.logOutClick}>
                         <i class="fas fa-sign-out-alt"></i>
                         <span class='navlink-text'>Log-Out</span>
                     </a>
@@ -74,19 +74,19 @@
 
             <form class="registration-form">
                 <h1>NotePad Registration</h1>
-                <div class="form-item">
+                <div class="form-note">
                     <label htmlFor="register-email">Email</label>
                     <input type="text" placeholder="email" required="" id="register-email" />
                 </div>
-                <div class="form-item">
+                <div class="form-note">
                     <label htmlFor="register-password">Password</label>
                     <input type="text" placeholder="password" required="" id="register-password" />
                 </div>
-                <div class="form-item">
+                <div class="form-note">
                     <label htmlFor="register-confirm-password">Confirm Password</label>
                     <input type="text" placeholder="confirm-password" required="" id="register-confirm-password" />
                 </div>
-                <div class="form-item">
+                <div class="form-note">
                     <a href="#" class="myButton">Register</a>
                     <p>Already have an account? <a href="#">Sign In</a></p>
                 </div>
@@ -107,15 +107,15 @@
             <form class="sign-in-form">
                 <h1>NotePad Sign-In</h1>
 
-                <div class="form-item">
+                <div class="form-note">
                     <label htmlFor="sign-in-email">Email</label>
                     <input type="text" placeholder="email" required="" id="sign-in-email" />
                 </div>
-                <div class="form-item">
+                <div class="form-note">
                     <label htmlFor="sign-in-password">Password</label>
                     <input type="text" placeholder="password" required="" id="sign-in-password" />
                 </div>
-                <div class="form-item">
+                <div class="form-note">
                     <a href="#" class="myButton">Sign-In</a>
                     <p>Need to create an account? <a href="#">Register</a></p>
                 </div>
@@ -128,14 +128,14 @@
         <section class="landing-page">
             <h1>NotePad</h1>
 
-            <div class="item-wrapper">
-                <h3 class="item-title">Welcome to NotePad!</h3>
-                <p class="item-notes">Here you can create and save notes for literally anything!</p>
+            <div class="note-wrapper">
+                <h3 class="note-title">Welcome to NotePad!</h3>
+                <p class="note-notes">Here you can create and save notes for literally anything!</p>
             </div>
-            <div class="form-item">
+            <div class="form-note">
                 <a href="#" class="myButton">Sign-In</a>
             </div>
-            <div class="form-item">
+            <div class="form-note">
                 <a href="#" class="myButton">Register</a>
             </div>
         </section>
@@ -151,9 +151,9 @@
             <div class="alert alert-success">
                 <i class="fas fa-check"></i> <strong>Success</strong> Note Deleted Sucessfully!!
             </div>
-            <div class="item-wrapper">
-                <h3 class="item-title">Note 1</h3>
-                <p class="item-notes">Here are the user's notes</p>
+            <div class="note-wrapper">
+                <h3 class="note-title">Note 1</h3>
+                <p class="note-notes">Here are the user's notes</p>
                 <button type="submit" class="myButton">
                     <i class="fas fa-trash-alt"></i> Edit
                 </button>
@@ -161,9 +161,9 @@
                     <i class="fas fa-trash-alt"></i> DELETE
                 </button>
             </div>
-            <div class="item-wrapper">
-                <h3 class="item-title">Note 2</h3>
-                <p class="item-notes">Here are the user's notes</p>
+            <div class="note-wrapper">
+                <h3 class="note-title">Note 2</h3>
+                <p class="note-notes">Here are the user's notes</p>
                 <button type="submit" class="myButton">
                     <i class="fas fa-trash-alt"></i> Edit
                 </button>
@@ -178,54 +178,54 @@
 
 
 
-        <section class="add-item-page">
+        <section class="add-note-page">
             <h1>New Note</h1>
-            <form class="create-new-item">
+            <form class="create-new-note">
                 <div class="alert alert-info">
                     <i class="fas fa-info"></i> <strong>Info</strong> Please enter a valid title!!
                 </div>
                 <div class="alert alert-info">
                     <i class="fas fa-info"></i> <strong>Info</strong> Please enter a valid note!!
                 </div>
-                <div class="add-item">
+                <div class="add-note">
                     <label htmlFor="note-title">Enter a title</label>
                     <input type="text" placeholder="Title" required="" id="note-title" />
                 </div>
-                <div class="form-item">
+                <div class="form-note">
                     <label htmlFor="personal-notes">Notes:</label>
                     <input type="text" placeholder="Notes:" name="personal-notes" id="personal-notes">
                 </div>
-                <div class="form-item">
+                <div class="form-note">
                     <a href="#" class="myButton">Cancel</a>
                 </div>
-                <div class="form-item">
+                <div class="form-note">
                     <a href="#" class="myButton">Save</a>
                 </div>
             </form>
 
         </section>
 
-        <section class="edit-item-page">
+        <section class="edit-note-page">
             <h1>Edit Note</h1>
-            <form class="create-new-item">
+            <form class="create-new-note">
                 <div class="alert alert-info">
                     <i class="fas fa-info"></i> <strong>Info</strong> Please enter a valid title!!
                 </div>
                 <div class="alert alert-info">
                     <i class="fas fa-info"></i> <strong>Info</strong> Please enter a valid note!!
                 </div>
-                <div class="add-item">
+                <div class="add-note">
                     <label htmlFor="note-title">Title: </label>
                     <input type="text" placeholder="Old Title" required="" id="note-title" />
                 </div>
-                <div class="form-item">
+                <div class="form-note">
                     <label htmlFor="personal-notes">Notes: </label>
                     <input type="text" placeholder="Old Notes:" name="personal-notes" id="personal-notes">
                 </div>
-                <div class="form-item">
+                <div class="form-note">
                     <a href="#" class="myButton">Cancel</a>
                 </div>
-                <div class="form-item">
+                <div class="form-note">
                     <a href="#" class="myButton">Save</a>
                 </div>
             </form>

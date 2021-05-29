@@ -16,10 +16,10 @@ export class Registration extends Component {
   }
 
   formatQueryParams(params) {
-    const queryItems = Object.keys(params).map(
+    const queryNotes = Object.keys(params).map(
       (key) => `${encodeURIComponent(key)}=${encodeURIComponent(params[key])}`
     );
-    return queryItems.join("&");
+    return queryNotes.join("&");
   }
 
   validateEmail(inputEmail) {
@@ -150,7 +150,7 @@ export class Registration extends Component {
                 required
               />
               {/* <label htmlFor="getStarted">Let's Get Started!</label> */}
-              <div className="form-item">
+              <div className="form-note">
                 <input
                   name="getStarted"
                   type="submit"

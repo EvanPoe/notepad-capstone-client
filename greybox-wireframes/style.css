@@ -243,17 +243,17 @@ section, .registration, .sign-in {
   background-color: #3b2616;    width: 80%;
 }
 
-section div.item-wrapper {
+section div.note-wrapper {
     display: block;
     width: 100%;
     border-bottom: 1px solid white;
 }
 
-section div.item-wrapper:last-child {
+section div.note-wrapper:last-child {
     border-bottom: none;
 }
 
-section.landing-page div.item-wrapper {
+section.landing-page div.note-wrapper {
   display: block;
   margin: auto;
   padding-top: 25px;
@@ -263,7 +263,7 @@ section.landing-page div.item-wrapper {
   width: 85%;
 }
 
-section.dashboard-page div.item-wrapper {
+section.dashboard-page div.note-wrapper {
   display: block;
   margin: auto;
   padding-top: 25px;
@@ -274,11 +274,11 @@ section.dashboard-page div.item-wrapper {
   margin-bottom: 20px;
 }
 
-section.landing-page div.item-wrapper h3.item-title {
+section.landing-page div.note-wrapper h3.note-title {
   margin-bottom: 15px;
 }
 
-section .item-wrapper .item-column {
+section .note-wrapper .note-column {
     width: 49%;
     display: inline-block;
     /* border: 1px solid black; */
@@ -287,23 +287,23 @@ section .item-wrapper .item-column {
     text-align: left;
 }
 
-section .item-wrapper .item-column .item-image {
+section .note-wrapper .note-column .note-image {
   width: 100%;
   border-radius: 15px;
   border: 1px solid white;
 }
 
-section .item-wrapper .item-column h3.item-title {
+section .note-wrapper .note-column h3.note-title {
     text-align: left;
     margin-bottom: 15px;
 }
 
-section .item-wrapper .item-column p.item-notes {
+section .note-wrapper .note-column p.note-notes {
   text-align: left;
   margin-bottom: 15px;
 }
 
-section .item-wrapper .item-column .item-details {
+section .note-wrapper .note-column .note-details {
   display: block;
   width: 80%;
   margin-left: auto;
@@ -311,13 +311,13 @@ section .item-wrapper .item-column .item-details {
   list-style-type: none;
 }
 
-section .item-wrapper .item-column .item-details li {
+section .note-wrapper .note-column .note-details li {
     border-top: 1px solid white;
     padding-top: 10px;
     padding-bottom: 10px;
 }
 
-section .item-wrapper .item-column .item-details li:last-child {
+section .note-wrapper .note-column .note-details li:last-child {
   border-bottom: 1px solid white;
 }
 

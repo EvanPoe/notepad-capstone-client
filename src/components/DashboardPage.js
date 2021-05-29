@@ -7,7 +7,7 @@ export class DashboardPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      itemsByUserId: [],
+      notesByUserId: [],
     };
   }
 
@@ -21,14 +21,14 @@ export class DashboardPage extends Component {
     //   window.location = "/";
     // }
 
-    let getItemsByUserIdUrl = `${config.API_ENDPOINT}/items/user/${currentUser}`;
+    let getNotesByUserIdUrl = `${config.API_ENDPOINT}/notes/user/${currentUser}`;
 
-    fetch(getItemsByUserIdUrl)
-      .then((itemsInList) => itemsInList.json())
-      .then((itemsInList) => {
-        // console.log(itemsInList);
+    fetch(getNotesByUserIdUrl)
+      .then((notesInList) => notesInList.json())
+      .then((notesInList) => {
+        // console.log(notesInList);
         this.setState({
-          itemsByUserId: itemsInList,
+          notesByUserId: notesInList,
         });
         // console.log(this.state);
       })
@@ -36,7 +36,7 @@ export class DashboardPage extends Component {
       .catch((error) => this.setState({ error }));
   }
 
-  deleteItem(event) {
+  deleteNote(event) {
     event.preventDefault();
 
     const data = {};
@@ -49,10 +49,10 @@ export class DashboardPage extends Component {
 
     // console.log(data);
 
-    let { itemId } = data;
-    // console.log(itemId);
+    let { noteId } = data;
+    // console.log(noteId);
 
-    fetch(`${config.API_ENDPOINT}/items/${itemId}`, {
+    fetch(`${config.API_ENDPOINT}/notes/${noteId}`, {
       method: "DELETE",
       headers: {
         "content-type": "application/json",
@@ -62,7 +62,7 @@ export class DashboardPage extends Component {
     });
   }
 
-  changeItemCategory(event) {
+  changeNoteCategory(event) {
     event.preventDefault();
 
     const data = {};
@@ -75,11 +75,11 @@ export class DashboardPage extends Component {
 
     // console.log(data);
 
-    let { itemId, newItemCategory } = data;
-    // console.log(itemId, newItemCategory);
+    let { noteId, newNoteCategory } = data;
+    // console.log(noteId, newNoteCategory);
 
     let payload = {
-      category: newItemCategory,
+      category: newNoteCategory,
     };
 
     // console.log("the payload: ", payload);
@@ -93,7 +93,7 @@ export class DashboardPage extends Component {
     };
 
     //useing the url and parameters above make the api call
-    fetch(`${config.API_ENDPOINT}/items/${itemId}`, options)
+    fetch(`${config.API_ENDPOINT}/notes/${noteId}`, options)
       // if the api returns data ...
       .then((res) => {
         if (!res.ok) {
@@ -107,7 +107,7 @@ export class DashboardPage extends Component {
         //check if there is meaningfull data
         // console.log(data);
         // check if there are no results
-        if (data.totalItems === 0) {
+        if (data.totalNotes === 0) {
           throw new Error("No data found");
         }
         window.location = `/dashboard-page`;
@@ -120,35 +120,35 @@ export class DashboardPage extends Component {
   }
 
   render() {
-    let showItemByUserId = "";
+    let showNoteByUserId = "";
 
-    if (this.state.itemsByUserId.length == 0) {
-      showItemByUserId = <p>No Items</p>;
+    if (this.state.notesByUserId.length == 0) {
+      showNoteByUserId = <p>No Notes</p>;
     } else {
-      showItemByUserId = this.state.itemsByUserId.map((item, key) => {
-        let editItemUrl = `/edit-item-page/${item.id}`;
+      showNoteByUserId = this.state.notesByUserId.map((note, key) => {
+        let editNoteUrl = `/edit-note-page/${note.id}`;
 
 
 
         
 
         return (
-          <div className="item-wrapper" key={key}>
-              <h3 className="item-title">{item.keyword}</h3>
-              <p className="item-notes">{item.notes}</p>
-              <ul className="item-details">
-                <li className="item-actions">
-                  <div className="form-item">
-                    <Link to={editItemUrl} className="myButton">
+          <div className="note-wrapper" key={key}>
+              <h3 className="note-title">{note.keyword}</h3>
+              <p className="note-notes">{note.notes}</p>
+              <ul className="note-details">
+                <li className="note-actions">
+                  <div className="form-note">
+                    <Link to={editNoteUrl} className="myButton">
                     <i class="fas fa-edit"></i>EDIT
                     </Link>
                   </div>
-                  <div className="form-item">
-                    <form className="deleteItemForm" onSubmit={this.deleteItem}>
+                  <div className="form-note">
+                    <form className="deleteNoteForm" onSubmit={this.deleteNote}>
                       <input
                         type="hidden"
-                        name="itemId"
-                        defaultValue={item.id}
+                        name="noteId"
+                        defaultValue={note.id}
                       ></input>
                       <button type="submit" className="myButton">
                         <i className="fas fa-trash-alt"></i> DELETE
@@ -166,7 +166,7 @@ export class DashboardPage extends Component {
       <div>
         <section className="dashboard-page">
           <h1>NotePad Dashboard</h1>
-          {showItemByUserId}
+          {showNoteByUserId}
         </section>
       </div>
     );

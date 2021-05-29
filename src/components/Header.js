@@ -21,20 +21,20 @@ export class Header extends Component {
             {TokenService.hasAuthToken() ? (
               <ul className="link">
                 <li>
-                  <a className="nav-link-item" href="/dashboard-page">
+                  <a className="nav-link-note" href="/dashboard-page">
                     <i className="fas fa-question-circle"></i>
                     <span className="navlink-text">Dashboard</span>
                   </a>
                 </li>
                 <li>
-                  <a className="nav-link-item" href="/add-item-page">
+                  <a className="nav-link-note" href="/add-note-page">
                     <i className="fas fa-plus-circle"></i>
                     <span className="navlink-text">New Note</span>
                   </a>
                 </li>
                 <li>
                   <a
-                    className="nav-link-item"
+                    className="nav-link-note"
                     href="/"
                     onClick={this.logOutClick}
                   >
@@ -46,13 +46,13 @@ export class Header extends Component {
             ) : (
               <ul className="link">
                 <li>
-                  <a className="nav-link-item" href="/sign-in">
+                  <a className="nav-link-note" href="/sign-in">
                     <i className="fas fa-edit"></i>
                     <span className="navlink-text">Sign-In</span>
                   </a>
                 </li>
                 <li>
-                  <a className="nav-link-item" href="/registration">
+                  <a className="nav-link-note" href="/registration">
                     <i className="fas fa-sign-out-alt"></i>
                     <span className="navlink-text">Registration</span>
                   </a>
