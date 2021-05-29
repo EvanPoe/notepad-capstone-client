@@ -9,34 +9,33 @@ export class EditNotePage extends Component {
     this.state = {
       notesByUserId: [],
       error: null,
-      // databaseWorkouts: [],
       currentNote: {},
     };
   }
 
   componentDidMount() {
-    // let currentUser = TokenService.getUserId();
-    let currentUser = 1;
-    // console.log(currentUser);
+    let currentUser = TokenService.getUserId();
+    // let currentUser = 1;
+    console.log(currentUser);
 
     //if the user is not logged in, send him to landing page
-    // if (!TokenService.hasAuthToken()) {
-    //   window.location = "/";
-    // }
+    if (!TokenService.hasAuthToken()) {
+      window.location = "/";
+    }
 
     const noteId = this.props.match.params.noteId;
 
-    // console.log(noteId);
+    console.log(noteId);
 
     let url = `${config.API_ENDPOINT}/notes/${noteId}`;
 
-    // console.log(url)
+    console.log(url)
 
     fetch(url)
       .then((response) => response.json())
 
       .then((data) => {
-        // console.log(data);
+        console.log(data);
 
         this.setState({
           currentNote: data,
@@ -44,7 +43,7 @@ export class EditNotePage extends Component {
       })
 
       .catch((err) => {
-        // console.log(err);
+        console.log(err);
       });
   }
 
@@ -60,13 +59,12 @@ export class EditNotePage extends Component {
     for (let value of formData) {
       userInputData[value[0]] = value[1];
     }
-    // console.log(userInputData);
-    // let { difficulty, type } = data;
+    console.log(userInputData);
 
     let payload = {
       user_id: TokenService.getUserId(),
-      keyword: userInputData.keyword,
-      notes: userInputData.notes,
+      title: userInputData.title,
+      content: userInputData.notes,
     };
 
     // console.log("the payload: ", payload);
@@ -126,14 +124,14 @@ export class EditNotePage extends Component {
           <form className="create-new-note" onSubmit={this.handleSubmit}>
             {errorMessage}
             <div className="add-note">
-              <label htmlFor="keyword-search">Enter a Title</label>
+              <label htmlFor="title-search">Enter a Title</label>
               <input
                 type="text"
-                placeholder="keyword"
-                name="keyword"
+                placeholder="title"
+                name="title"
                 required
-                id="keyword-search"
-                defaultValue={this.state.currentNote.keyword}
+                id="title-search"
+                defaultValue={this.state.currentNote.title}
               />
             </div>
                         
@@ -146,13 +144,13 @@ export class EditNotePage extends Component {
                 placeholder="Notes:"
                 name="notes"
                 id="personal-notes"
-                defaultValue={this.state.currentNote.notes}
+                defaultValue={this.state.currentNote.content}
               />
             </div>
 
             <div className="form-note">
                     <Link to="/dashboard-page" className="myButton">
-                    <i class="fas fa-edit"></i>Cancel
+                    <i className="fas fa-edit"></i>Cancel
                     </Link>
                   </div>
             

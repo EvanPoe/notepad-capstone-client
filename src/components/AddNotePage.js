@@ -14,14 +14,14 @@ export class AddNotePage extends Component {
   }
 
   componentDidMount() {
-    // let currentUser = TokenService.getUserId();
-    let currentUser = 1;
-    // console.log(currentUser);
+    let currentUser = TokenService.getUserId();
+    // let currentUser = 1;
+    console.log(currentUser);
 
-    //if the user is not logged in, send him to landing page
-    // if (!TokenService.hasAuthToken()) {
-    //   window.location = "/";
-    // }
+    // if the user is not logged in, send him to landing page
+    if (!TokenService.hasAuthToken()) {
+      window.location = "/";
+    }
   }
 
   handleSubmit = (e) => {
@@ -36,16 +36,15 @@ export class AddNotePage extends Component {
     for (let value of formData) {
       userInputData[value[0]] = value[1];
     }
-    // console.log(userInputData);
-    // let { difficulty, type } = data;
+    console.log(userInputData);
 
     let payload = {
       user_id: TokenService.getUserId(),
-      keyword: userInputData.keyword,
-      notes: userInputData.notes,
+      title: userInputData.title,
+      content: userInputData.notes,
     };
 
-    // console.log("the payload: ", payload);
+    console.log("the payload: ", payload);
     //define the API call parameters
     const options = {
       method: "POST",
@@ -60,7 +59,7 @@ export class AddNotePage extends Component {
       // if the api returns data ...
       .then((res) => {
         if (!res.ok) {
-          throw new Error("Something went wrong, please try again later.");
+          throw new Error("Something went wrong, please try again later");
         }
         // ... convert it to json
         return res.json();
@@ -68,7 +67,7 @@ export class AddNotePage extends Component {
       // use the json api output
       .then((data) => {
         //check if there is meaningfull data
-        // console.log(data);
+        console.log(data);
         // check if there are no results
         if (data.totalNotes === 0) {
           throw new Error("No data found");
@@ -76,9 +75,9 @@ export class AddNotePage extends Component {
         window.location.href = "/dashboard-page";
       })
       .catch((err) => {
-        // this.setState({
-        //   error: err.message,
-        // });
+        this.setState({
+          error: err.message,
+        });
       });
   };
 
@@ -99,13 +98,13 @@ export class AddNotePage extends Component {
           <form className="create-new-note" onSubmit={this.handleSubmit}>
             {errorMessage}
             <div className="add-note">
-              <label htmlFor="keyword-search">Enter a Title</label>
+              <label htmlFor="title-search">Enter a Title</label>
               <input
                 type="text"
-                placeholder="keyword"
-                name="keyword"
+                placeholder="title"
+                name="title"
                 required
-                id="keyword-search"
+                id="title-search"
               />
             </div>
 
@@ -121,7 +120,7 @@ export class AddNotePage extends Component {
 
             <div className="form-note">
               <Link to="/dashboard-page" className="myButton">
-                <i class="fas fa-edit"></i>Cancel
+                <i className="fas fa-edit"></i>Cancel
               </Link>
             </div>
             <div className="form-note">

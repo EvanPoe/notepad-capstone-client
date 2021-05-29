@@ -12,25 +12,26 @@ export class DashboardPage extends Component {
   }
 
   componentDidMount() {
-    // let currentUser = TokenService.getUserId();
-    let currentUser = 1;
-    // console.log(currentUser);
+    let currentUser = TokenService.getUserId();
+    // let currentUser = 1;
+
+    console.log(currentUser);
 
     //if the user is not logged in, send him to landing page
-    // if (!TokenService.hasAuthToken()) {
-    //   window.location = "/";
-    // }
+    if (!TokenService.hasAuthToken()) {
+      window.location = "/";
+    }
 
     let getNotesByUserIdUrl = `${config.API_ENDPOINT}/notes/user/${currentUser}`;
 
     fetch(getNotesByUserIdUrl)
       .then((notesInList) => notesInList.json())
       .then((notesInList) => {
-        // console.log(notesInList);
+        console.log(notesInList);
         this.setState({
           notesByUserId: notesInList,
         });
-        // console.log(this.state);
+        console.log(this.state);
       })
 
       .catch((error) => this.setState({ error }));
@@ -47,10 +48,10 @@ export class DashboardPage extends Component {
       data[value[0]] = value[1];
     }
 
-    // console.log(data);
+    console.log(data);
 
     let { noteId } = data;
-    // console.log(noteId);
+    console.log(noteId);
 
     fetch(`${config.API_ENDPOINT}/notes/${noteId}`, {
       method: "DELETE",
@@ -73,16 +74,16 @@ export class DashboardPage extends Component {
       data[value[0]] = value[1];
     }
 
-    // console.log(data);
+    console.log(data);
 
     let { noteId, newNoteCategory } = data;
-    // console.log(noteId, newNoteCategory);
+    console.log(noteId, newNoteCategory);
 
     let payload = {
       category: newNoteCategory,
     };
 
-    // console.log("the payload: ", payload);
+    console.log("the payload: ", payload);
     //define the API call parameters
     const options = {
       method: "PATCH",
@@ -105,7 +106,7 @@ export class DashboardPage extends Component {
       // use the json api output
       .then((data) => {
         //check if there is meaningfull data
-        // console.log(data);
+        console.log(data);
         // check if there are no results
         if (data.totalNotes === 0) {
           throw new Error("No data found");
@@ -113,9 +114,9 @@ export class DashboardPage extends Component {
         window.location = `/dashboard-page`;
       })
       .catch((err) => {
-        // this.setState({
-        //   error: err.message,
-        // });
+        this.setState({
+          error: err.message,
+        });
       });
   }
 
@@ -134,13 +135,13 @@ export class DashboardPage extends Component {
 
         return (
           <div className="note-wrapper" key={key}>
-              <h3 className="note-title">{note.keyword}</h3>
-              <p className="note-notes">{note.notes}</p>
+              <h3 className="note-title">{note.title}</h3>
+              <p className="note-notes">{note.content}</p>
               <ul className="note-details">
                 <li className="note-actions">
                   <div className="form-note">
                     <Link to={editNoteUrl} className="myButton">
-                    <i class="fas fa-edit"></i>EDIT
+                    <i className="fas fa-edit"></i>EDIT
                     </Link>
                   </div>
                   <div className="form-note">
