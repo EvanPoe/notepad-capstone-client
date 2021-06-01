@@ -3,7 +3,7 @@ Busy schedule? Do you find it difficult to keep track of everything? NotePad is 
 
 
 ### 1. Working Prototype (to do later)
-You can access a working prototype of the React app here: https:// and Node app here: https://notepad-capstone.herokuapp.com/
+You can access a working prototype of the React app here: https://notepad-capstone-client.vercel.app/ and Node app here: https://notepad-capstone.herokuapp.com/
 
 ### 2. User Stories 
 This app is for two types of users: a visitor and a logged-in user
