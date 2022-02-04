@@ -5,7 +5,7 @@ export class footer extends Component {
     return (
       <div>
         <footer>
-          <h4>© 2019-2021 Evan Poe</h4>
+          <h4>© 2019-2022 Evan Poe</h4>
           <a href="#top">
             <i className="far fa-caret-square-up fa-2x"></i>
           </a>
