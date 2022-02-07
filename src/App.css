@@ -61,9 +61,16 @@ General styles (General Module, wrapping around the modules below)
 (the styles used everywhere in the page (like the Body) or styles which are used in more than 2 of the modules below (h2, h3, h4, h5, h6, p, a, ul, li))
 */
 
+div.App {
+  position: relative;
+  min-height: 100vh;
+}
+
 body {
   border: 3px solid white;
   font-family: 'Roboto', sans-serif;
+  background-image: url(https://raw.githubusercontent.com/EvanPoe/notepad-capstone-client/main/public/website-images/background/wood-pattern.png);
+  background-color: #3b2616;
 }
 
 /* font-family: 'Pacifico', cursive;
@@ -183,9 +190,6 @@ header {
   display: block;
   position: fixed;
   top: 0;
-  background-image: url(https://raw.githubusercontent.com/EvanPoe/notepad-capstone-client/main/public/website-images/background/wood-pattern.png);
-  background-color: #3b2616;
-  /* background: -webkit-linear-gradient(top, #f0b7a1 0%,#8c3310 46%,#722d12 51%,#bf6e4e 100%); */
   padding: 20px 10px;
 }
 
@@ -236,11 +240,8 @@ form {
 
 section, .registration, .sign-in {
   border: 2px black solid;
-  background-color: #EEEEEE;
   margin-top: 40px;
   padding: 0px 10px 40px 10px;
-  background-image: url(https://raw.githubusercontent.com/EvanPoe/notepad-capstone-client/main/public/website-images/background/wood-pattern.png);
-  background-color: #3b2616;    width: 80%;
 }
 
 section div.note-wrapper {
@@ -326,7 +327,6 @@ div.blueTable {
   margin-top: 10px;
   background-color: #EEEEEE;
   width: 95%;
-  /* max-width: 350px; */
   text-align: left;
   border-collapse: collapse;
   margin-left: auto;
@@ -468,15 +468,18 @@ Footer styles (Main Module)
 */
 
 footer {
-  margin-top: 50px;
-  margin-bottom: 15px;
-  border: 0px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem; 
+  color: white;
 }
 
 footer h4 {
   display: block;
   text-align: center;
   font-weight: bold;
+  margin-top: .75vh;
 }
 
 footer a i.far {
@@ -484,11 +487,11 @@ footer a i.far {
   position: fixed;
   bottom: 30px;
   right: 30px;
-  color: #163a8b;
+  color: white;
 }
 
 footer a:hover i.far {
-  color: #081e6f;
+  color:rgba(255, 255, 255, 0.651);
 }
 
 /* -------------------------------------
